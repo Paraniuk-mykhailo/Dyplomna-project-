@@ -1,0 +1,30 @@
+{% extends 'listings/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <div class="card p-4 shadow" style="width: 350px;">
+    <h2 class="text-center mb-4">Увійти</h2>
+    <form method="post">
+      {% csrf_token %}
+              {% if form.non_field_errors %}
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            <li>Будь ласка, введіть правильний логін і пароль. Обидва поля чутливі до регістру.</li>
+        </ul>
+    </div>
+{% endif %}
+      <div class="mb-3">
+        <label for="id_username" class="form-label">Логін</label>
+        <input type="text" name="username" class="form-control" id="id_username" required>
+      </div>
+      <div class="mb-3">
+        <label for="id_password" class="form-label">Пароль</label>
+        <input type="password" name="password" class="form-control" id="id_password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Увійти</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

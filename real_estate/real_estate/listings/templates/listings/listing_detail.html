@@ -1,0 +1,17 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <img src="{{ listing.image.url }}" class="card-img-top" alt="{{ listing.title }}" style="max-height: 400px; object-fit: cover;">
+        <div class="card-body">
+            <h2 class="card-title">{{ listing.title }}</h2>
+            <p class="card-text">{{ listing.description }}</p>
+            <p><strong>Ціна:</strong> ${{ listing.price }}</p>
+            <p><strong>Площа:</strong> {{ listing.square_meters }} м²</p>
+            <p><strong>Email власника:</strong> <a href="mailto:{{ listing.user.email }}">{{ listing.user.email }}</a></p>
+            <a href="/" class="btn btn-primary">Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

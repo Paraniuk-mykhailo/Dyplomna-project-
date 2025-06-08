@@ -1,0 +1,28 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+<div class="container text-center mt-4">
+    <div class="position-relative d-flex justify-content-center align-items-center" style="max-width: 80%; margin: 0 auto;">
+        <img src="/media/banner.png" class="img-fluid rounded" alt="Banner" style="width: 100%; height: auto;">
+        <h4 class="position-absolute text-white bg-dark bg-opacity-75 px-3 py-1 rounded" style="font-size: 1.5rem;">Найкращі варіанти</h4>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Оголошення про продаж квартир</h2>
+    <div class="row">
+        {% for listing in listings %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg">
+                <img src="{{ listing.image.url }}" class="card-img-top" alt="{{ listing.title }}" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ listing.title }}</h5>
+                    <p class="card-text"><strong>Площа:</strong> {{ listing.square_meters }} м²</p>
+                    <p class="card-text"><strong>Ціна:</strong> ${{ listing.price }}</p>
+                    <a href="{% url 'listing_detail' listing.id %}" class="btn btn-primary w-100">Детальніше</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
