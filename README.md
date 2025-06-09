@@ -15,7 +15,7 @@
 
 ```bash
 git clone https://github.com/your-username/your-project.git
-cd your-project
+cd Dyplomna-project-
 ```
 
 ## Встановлюємо залежності
