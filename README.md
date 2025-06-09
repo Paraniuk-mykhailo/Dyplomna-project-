@@ -8,7 +8,8 @@
 
 - Python 3.8+
 - pip
-- virtualenv (опціонально, але рекомендовано)
+- Django
+- Pillow
 - Git (опціонально)
 
 ## Клонуємо репозиторій
@@ -18,19 +19,6 @@ git clone https://github.com/your-username/your-project.git
 cd Dyplomna-project-
 cd real_estate-
 cd real_estate-
-```
-
-## Встановлюємо залежності
-
-```bash
-pip install -r requirements.txt
-```
-
-## Застосовуємо міграції
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
 ```
 
 ## Запускаємо сервер
